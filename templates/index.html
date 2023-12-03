@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Ordena tus numeros!</title>
+    <script src="../static/script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body, html {
+            background-color:rgb(10, 31, 69);
+            height: 100%;
+            padding: 2%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #mainContainer {
+            background-color: white;
+            border-radius: 10px;
+            min-height: 100%;
+            height: fit-content;
+            padding-inline: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainContainer">
+        <div style="display: flex; flex-direction: row; height: fit-content; justify-content: space-between; align-items: center;">
+            <div style="width: 40%;"><img src="https://www.uaz.edu.mx/wp-content/uploads/2021/03/LOGO-160X160-1.jpg" style="mix-blend-mode: multiply;" ></div>
+            <div style="vertical-align: middle; height: 100%; width: 60%; text-align: right;">
+                <strong>Luis Ruben Ramos Cortes</strong> <br>
+                Análisis y diseño de algoritmos <br>
+                Ingeniería de Software - 3er Semestre
+            </div>
+        </div>
+        Instrucciones: Selecciona algoritmo y sigue una de las siguientes rutas: <br><br>
+        1.- Algoritmo de ordenamiento <br><br>
+                <select id="algoritmoSelector" class="form-control" style="width: 60%;">
+                    <option value="Bubble">Bubble Sort</option>
+                    <option value="Insertion">Insertion Sort</option>
+                    <option value="Merge">Merge Sort</option>
+                    <option value="Heap">Heap Sort</option>
+                    <option value="Quick">Quick Sort</option>
+                    <option value="Counting">Counting Sort</option>
+                    <option value="Radix">Radix Sort</option>
+                    <option value="Bucket">Bucket Sort</option>
+                </select><br>
+        <div id="results" style="display:none;"><canvas id="chart"></canvas></div>
+        <div style="display:flex; flex-direction: row; flex: 1;" id="formContainer">
+            <div style="width: 50%; padding-inline:5px;">
+                1.- Selecciona la cantidad de numeros a ordenar <br><br>
+                <div style="display: flex; flex-direction: row; justify-content: center;">
+                    <input type="number" class="form-control" value="2" id="cantNum" style="width:20%" max="10" min="2" onchange="setNumberQty(this.value)">
+                </div>
+                2.- Ingresa los números <br><br>
+                <div id="numbersWrapper" style="display: flex;  flex-wrap: wrap;">
+                    <input type="number" class="form-control inputNum" style="width:70px; margin-right: 10px;">
+                    <input type="number" class="form-control inputNum" style="width:70px; margin-right: 10px;">
+                </div>
+                <br>
+                <button class="btn btn-primary" style="width: 100%;" onclick="getOrdenamiento(false)">ORDENAR</button>
+            </div>
+            <div style="background-color: lightgray; width: 1px; height: 100;"></div>
+            <div style="width:50%; padding-inline: 5px; display: flex; justify-content: space-between; text-align: justify; flex-direction: column;">
+                Inicializa con un estado aleatorio <br><br>
+                <button class="btn btn-primary" style="width: 100%;" onclick="getOrdenamiento(true)">MODO RANDOM</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
