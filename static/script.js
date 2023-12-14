@@ -44,8 +44,6 @@ function simulation(states, time) {
     const algoSelector = document.getElementById('algoritmoSelector');
     const timeText = document.getElementById('timeElapsed');
 
-    timeText.style.display=''
-    timeText.innerHTML=`Tiempo de ejecución: ${time} segundos`
 
     algoSelector.style.display='none';
     area.style.display = '';

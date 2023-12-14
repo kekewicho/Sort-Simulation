@@ -29,4 +29,4 @@ def ordenar():
     return {'code':300,'states':results,'time_elapsed':tiempo}
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')

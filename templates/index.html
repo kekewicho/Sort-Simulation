@@ -28,23 +28,65 @@
             height: fit-content;
             padding-inline: 25px;
         }
+
+        /* Media query para teléfonos */
+        @media (max-device-width: 480px) {
+
+            #headerContainer {
+                flex-direction: column;
+            }
+
+            #misDatos {
+                text-align: center !important;
+                width: 100%;
+            }
+
+            #logo {
+                width: 100%;
+            }
+
+            #logo_img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 40%;
+            }
+        }
+
+        @media (min-device-width: 480px) {
+
+            #headerContainer {
+                display: flex;
+                flex-direction: row;
+                height: fit-content;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            #misDatos {
+                vertical-align: middle;
+                height: 100%;
+                width: 60%;
+                text-align: right;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div id="mainContainer">
-        <div
-            style="display: flex; flex-direction: row; height: fit-content; justify-content: space-between; align-items: center;">
-            <div style="width: 40%;"><img src="https://www.uaz.edu.mx/wp-content/uploads/2021/03/LOGO-160X160-1.jpg"
+        <div id="headerContainer">
+            <div id="logo"><img id="logo_img" src="https://www.uaz.edu.mx/wp-content/uploads/2021/03/LOGO-160X160-1.jpg"
                     style="mix-blend-mode: multiply;"></div>
-            <div style="vertical-align: middle; height: 100%; width: 60%; text-align: right;">
+            <div id="misDatos">
                 <strong>Luis Ruben Ramos Cortes</strong> <br>
                 Análisis y diseño de algoritmos <br>
                 Ingeniería de Software - 3er Semestre
             </div>
-        </div>
-        Instrucciones: Selecciona algoritmo y sigue una de las siguientes rutas: <br><br>
-        1.- Algoritmo de ordenamiento <br><br>
+        </div><br>
+        <b>
+            Instrucciones: Selecciona algoritmo y sigue una de las siguientes rutas:</b> <br><br>
+            1.- Algoritmo de ordenamiento <br><br>
         <select id="algoritmoSelector" class="form-control" style="width: 60%;">
             <option value="Bubble">Bubble Sort</option>
             <option value="Insertion">Insertion Sort</option>
@@ -55,9 +97,9 @@
             <option value="Radix">Radix Sort</option>
             <option value="Bucket">Bucket Sort</option>
         </select><br>
-        <h3 id="timeElapsed" style="display: none;"></h3>
-        <div id="results" style="display:none; height: 300px;"><canvas id="chart"></canvas></div>
-        <div style="display:flex; flex-direction: row; flex: 1;" id="formContainer">
+        <div id="results" style="display:none; height: fit-content;"><canvas id="chart" style="height: 300px;"></canvas>
+        </div>
+        <div style="display:flex; flex-direction: row; flex: 1; padding-bottom: 20px;" id="formContainer">
             <div style="width: 50%; padding-inline:5px;">
                 1.- Selecciona la cantidad de numeros a ordenar <br><br>
                 <div style="display: flex; flex-direction: row; justify-content: center;">
